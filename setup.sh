@@ -2,6 +2,7 @@
 
 # Directory the script is located in
 scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+errorCodes=0
 
 # If .bashrc file exists, delete it. Then stow the custom one
 if [[ -f ~/.bashrc ]] && ! [[ -L ~/.bashrc ]]; then
@@ -9,10 +10,12 @@ if [[ -f ~/.bashrc ]] && ! [[ -L ~/.bashrc ]]; then
     rm -f ~/.bashrc
 fi
 
-stow --no-folding -vv -d "$scriptDir" bash
+stow --no-folding -v -d "$scriptDir" bash
+errorCodes+=$?
 
 # Stow the fonts
-stow --no-folding -vv -d "$scriptDir" fonts
+stow --no-folding -v -d "$scriptDir" fonts
+errorCodes+=$?
 
 # If bspwmrc file exists, delete it. Then stow the custom one
 if [[ -f ~/.config/bspwm/bspwmrc ]] && ! [[ -L ~/.config/bspwm/bspwmrc ]]; then
@@ -20,7 +23,8 @@ if [[ -f ~/.config/bspwm/bspwmrc ]] && ! [[ -L ~/.config/bspwm/bspwmrc ]]; then
     rm -f ~/.config/bspwm/bspwmrc
 fi
 
-stow --no-folding -vv -d "$scriptDir" bspwm
+stow --no-folding -v -d "$scriptDir" bspwm
+errorCodes+=$?
 
 # If sxhkdrc file exists, delete it and stow the custom one
 if [[ -f ~/.config/sxhkd/sxhkdrc ]] && ! [[ -L ~/.config/sxhkd/sxhkdrc ]]; then
@@ -28,7 +32,8 @@ if [[ -f ~/.config/sxhkd/sxhkdrc ]] && ! [[ -L ~/.config/sxhkd/sxhkdrc ]]; then
     rm -f ~/.config/sxhkd/sxhkdrc
 fi
 
-stow --no-folding -vv -d "$scriptDir" sxhkd
+stow --no-folding -v -d "$scriptDir" sxhkd
+errorCodes+=$?
 
 # Check if termite file exists, delete it and stow the custom one
 if [[ -f ~/.config/termite/config ]] && ! [[ -L ~/.config/termite/config ]]; then
@@ -36,4 +41,12 @@ if [[ -f ~/.config/termite/config ]] && ! [[ -L ~/.config/termite/config ]]; the
     rm -f ~/.config/termite/config
 fi
 
-stow --no-folding -vv -d "$scriptDir" termite
+stow --no-folding -v -d "$scriptDir" termite
+errorCodes+=$?
+
+# Check for errors
+if [[ "$errorCodes" -eq 0 ]]; then
+    echo "Everything was executed correctly."
+else
+    echo "Something went wrong, please check."
+fi
