@@ -6,13 +6,20 @@
 super + Return
 	termite
 
-# program launcher
-super + @space
+# menu
+super + shift + alt + space
 	dmenu_run
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# Change keyboard layout
+super + space
+	{setxkbmap es, setxkbmap us}
+
+# Lock screen
+super + l
+	light-locker-command -l
 
 #
 # bspwm hotkeys
