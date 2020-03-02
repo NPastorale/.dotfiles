@@ -9,6 +9,7 @@ super + Return
 # menu
 super + shift + alt + space
 	dmenu_run
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
