@@ -22,6 +22,14 @@ super + space
 super + l
 	light-locker-command -l
 
+# Volume control
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
 #
 # bspwm hotkeys
 #
