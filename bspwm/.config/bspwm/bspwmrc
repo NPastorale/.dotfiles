@@ -22,5 +22,4 @@ feh --bg-center /home/nahue/Pictures/Free-1080p-Wallpaper.jpg &
 light-locker --lock-on-suspend &
 setxkbmap us &
 xcape -t 250 -e 'Super_L=Super_L|Shift_R|Meta_L|space' &
-
-termite &
+xsetroot -cursor_name left_ptr
