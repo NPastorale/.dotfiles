@@ -32,7 +32,7 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	amixer set Master 5%-
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	amixer set Master toggle
 
 # Brightness control
 XF86MonBrightnessUp
