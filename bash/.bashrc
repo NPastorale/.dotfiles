@@ -11,6 +11,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias l='ls -lh'
 alias vi='vim'
+alias ip='ip -c=auto'
 
 # Safety net aliases
 alias rm='rm -I --preserve-root'
