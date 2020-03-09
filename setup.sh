@@ -41,6 +41,15 @@ if [[ -f ~/.config/termite/config ]] && ! [[ -L ~/.config/termite/config ]]; the
     rm -f ~/.config/termite/config
 fi
 
+# If polybar config file exists, delete it and stow the custom one
+if [[ -f ~/.config/polybar/config ]] && ! [[ -L ~/.config/polybar/config ]]; then
+    echo "Polybar config already exists. Removing..."
+    rm -f ~/.config/polybar/config
+fi
+
+stow --no-folding -v -d "$scriptDir" polybar
+errorCodes+=$?
+
 stow --no-folding -v -d "$scriptDir" termite
 errorCodes+=$?
 
