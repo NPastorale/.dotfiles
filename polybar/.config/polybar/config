@@ -275,11 +275,11 @@ format-disconnected = <label-disconnected>
 
 ; Default: %ifname% %local_ip%
 label-connected = " %signal%% "
-label-connected-foreground = #ECEFF4
+label-connected-foreground = ${colors.nord6}
 
 ; Default: (none)
 label-disconnected = 
-label-disconnected-foreground = #66ffffff
+label-disconnected-foreground = ${colors.nord3}
 
 ;---------------------------------------
 ;	   KEYBOARD MODULE
@@ -299,5 +299,5 @@ format-spacing = 1
 ; Default: %layout%
 label-layout = %layout%
 label-layout-padding = 1
-label-layout-background = #434C5E
-label-layout-foreground = #ECEFF4
+label-layout-background = ${colors.nord3}
+label-layout-foreground = ${colors.nord6}
