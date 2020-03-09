@@ -179,8 +179,6 @@ type = internal/alsa
 ; Usually in the format hw:# where # is the card number
 ; You can find the different card numbers in `/proc/asound/cards`
 master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
 
 format-volume = "%{F#ebcb8b}%{F-} <label-volume> "
 
