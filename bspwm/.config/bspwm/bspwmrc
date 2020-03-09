@@ -24,3 +24,4 @@ bspc rule -a Screenkey manage=off
 
 light-locker --lock-on-suspend &
 sxhkd &
+dropbox &
