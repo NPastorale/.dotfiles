@@ -53,9 +53,9 @@ font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
 ;	     MODULES LAYOUT
 ;---------------------------------------
 
-modules-left = bspwm
+modules-left = xkeyboard bspwm
 modules-center = xwindow
-modules-right = cpu memory alsa battery network date xkeyboard
+modules-right = cpu memory alsa battery network date
 
 ;---------------------------------------
 ;	      BSPWM MODULE
