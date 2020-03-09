@@ -44,11 +44,10 @@ wm-restack = bspwm
 ;		FONTS
 ;---------------------------------------
 
-font-0 = JetBrains Mono:style=Regular:size=10;2
+font-0 = SF Pro Mono:style=Regular:size=10;2
 font-1 = Font Awesome 5 Free Regular:size=10;2
 font-2 = Font Awesome 5 Free Solid:size=10;2
 font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
-font-4 = SF Pro Display:size=10;2
 
 ;---------------------------------------
 ;	     MODULES LAYOUT
