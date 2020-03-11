@@ -307,9 +307,9 @@ label-layout-foreground = ${colors.nord6}
 [module/bluetooth]
 type = custom/script
 exec = ~/.config/polybar/bluetooth.sh
-interval = 2
+interval = 1
 click-left = exec blueberry
 click-right = exec ~/.config/polybar/bluetooth_toggle.sh
 format-padding = 1
-format-background = #000000
-format-foreground = #ffffff
+format-background = ${colors.nord1}
+format-foreground = ${colors.nord6}
