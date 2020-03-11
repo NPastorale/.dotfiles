@@ -55,7 +55,7 @@ font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
 
 modules-left = xkeyboard bspwm
 modules-center = xwindow
-modules-right = cpu memory alsa battery network date
+modules-right = cpu memory alsa battery network bluetooth date
 
 ;---------------------------------------
 ;	      BSPWM MODULE
@@ -299,3 +299,17 @@ label-layout = %layout%
 label-layout-padding = 1
 label-layout-background = ${colors.nord3}
 label-layout-foreground = ${colors.nord6}
+
+;---------------------------------------
+;	   BLUETOOTH MODULE
+;---------------------------------------
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/bluetooth.sh
+interval = 2
+click-left = exec blueberry
+click-right = exec ~/.config/polybar/bluetooth_toggle.sh
+format-padding = 1
+format-background = #000000
+format-foreground = #ffffff
