@@ -18,6 +18,7 @@ bspc config gapless_monocle true
 bspc config focus_follows_pointer true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Gnome-calculator state=floating
 bspc rule -a Chromium desktop='^2'
 bspc rule -a Google-chrome desktop='^2'
 bspc rule -a Code desktop='^3'
