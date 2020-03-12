@@ -40,6 +40,12 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	xbacklight -dec 10
 
+# Screenshots
+@Print
+	maim "/tmp/$(date +%F.%T).png"
+shift + @Print
+  maim -s -c 0.368627451,0.505882353,0.674509804,1 -b 2 "/tmp/$(date +%F.%T).png"
+
 #################
 # bspwm hotkeys #
 #################
