@@ -41,6 +41,9 @@ if [[ -f ~/.config/termite/config ]] && ! [[ -L ~/.config/termite/config ]]; the
     rm -f ~/.config/termite/config
 fi
 
+stow --no-folding -v -d "$scriptDir" termite
+errorCodes+=$?
+
 # If polybar config file exists, delete it and stow the custom one
 if [[ -f ~/.config/polybar/config ]] && ! [[ -L ~/.config/polybar/config ]]; then
     echo "Polybar config already exists. Removing..."
@@ -50,7 +53,13 @@ fi
 stow --no-folding -v -d "$scriptDir" polybar
 errorCodes+=$?
 
-stow --no-folding -v -d "$scriptDir" termite
+# If polybar config file exists, delete it and stow the custom one
+if [[ -f ~/.config/rofi/config ]] && ! [[ -L ~/.config/rofi/config ]]; then
+    echo "Rofi config already exists. Removing..."
+    rm -f ~/.config/rofi/config
+fi
+
+stow --no-folding -v -d "$scriptDir" rofi
 errorCodes+=$?
 
 # Check for errors
