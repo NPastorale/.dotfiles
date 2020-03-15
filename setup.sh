@@ -20,7 +20,7 @@ errorCodes+=$?
 # If bspwmrc file exists, delete it. Then stow the custom one
 if [[ -f ~/.config/bspwm/bspwmrc ]] && ! [[ -L ~/.config/bspwm/bspwmrc ]]; then
     echo "BSPWM config already exists. Removing..."
-    rm -f ~/.config/bspwm/bspwmrc
+    rm -rf ~/.config/bspwm
 fi
 
 stow --no-folding -v -d "$scriptDir" bspwm
@@ -29,7 +29,7 @@ errorCodes+=$?
 # If sxhkdrc file exists, delete it and stow the custom one
 if [[ -f ~/.config/sxhkd/sxhkdrc ]] && ! [[ -L ~/.config/sxhkd/sxhkdrc ]]; then
     echo "SXHKD config already exists. Removing..."
-    rm -f ~/.config/sxhkd/sxhkdrc
+    rm -rf ~/.config/sxhkd
 fi
 
 stow --no-folding -v -d "$scriptDir" sxhkd
@@ -38,7 +38,7 @@ errorCodes+=$?
 # Check if termite file exists, delete it and stow the custom one
 if [[ -f ~/.config/termite/config ]] && ! [[ -L ~/.config/termite/config ]]; then
     echo "Termite config already exists. Removing..."
-    rm -f ~/.config/termite/config
+    rm -rf ~/.config/termite
 fi
 
 stow --no-folding -v -d "$scriptDir" termite
@@ -47,19 +47,28 @@ errorCodes+=$?
 # If polybar config file exists, delete it and stow the custom one
 if [[ -f ~/.config/polybar/config ]] && ! [[ -L ~/.config/polybar/config ]]; then
     echo "Polybar config already exists. Removing..."
-    rm -f ~/.config/polybar/config
+    rm -rf ~/.config/polybar
 fi
 
 stow --no-folding -v -d "$scriptDir" polybar
 errorCodes+=$?
 
-# If polybar config file exists, delete it and stow the custom one
+# If rofi config file exists, delete it and stow the custom one
 if [[ -f ~/.config/rofi/config ]] && ! [[ -L ~/.config/rofi/config ]]; then
     echo "Rofi config already exists. Removing..."
-    rm -f ~/.config/rofi/config
+    rm -rf ~/.config/rofi
 fi
 
 stow --no-folding -v -d "$scriptDir" rofi
+errorCodes+=$?
+
+# If imwheel config file exists, delete it and stow the custom one
+if [[ -f ~/.imwheelrc ]] && ! [[ -L ~/.imwheelrc ]]; then
+    echo "IMWheel config already exists. Removing..."
+    rm -rf ~/.imwheelrc
+fi
+
+stow --no-folding -v -d "$scriptDir" imwheel
 errorCodes+=$?
 
 # Check for errors
