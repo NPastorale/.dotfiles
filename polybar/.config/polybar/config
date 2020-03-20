@@ -175,14 +175,12 @@ ramp-capacity-4 = " %{F#a3be8c}"
 [module/alsa]
 type = internal/alsa
 
-; Soundcard to be used
-; Usually in the format hw:# where # is the card number
-; You can find the different card numbers in `/proc/asound/cards`
 master-soundcard = default
 
 format-volume = "%{F#ebcb8b}%{F-} <label-volume> "
+label-volume = %percentage%%
 
-label-muted = "%{F#eb8b8b}%{F-} Muted "
+label-muted = "%{F#eb8b8b}%{F-} %percentage%% "
 
 ;---------------------------------------
 ;	   CPU MODULE
@@ -191,22 +189,9 @@ label-muted = "%{F#eb8b8b}%{F-} Muted "
 [module/cpu]
 type = internal/cpu
 
-; Seconds to sleep between updates
-; Default: 1
 interval = 1
 
-; Available tags:
-;   <label> (default)
-;   <bar-load>
-;   <ramp-load>
-;   <ramp-coreload>
 format = "%{F#8FBCBB}%{F-} <label> "
-
-; Available tokens:
-;   %percentage% (default) - total cpu load averaged over all cores
-;   %percentage-sum% - Cumulative load on all cores
-;   %percentage-cores% - load percentage for each core
-;   %percentage-core[1-9]% - load percentage for specific core
 label = %percentage%%
 
 label-spacing = 1
@@ -218,12 +203,9 @@ label-spacing = 1
 [module/memory]
 type = internal/memory
 
-; Seconds to sleep between updates
-; Default: 1
 interval = 1
 
 format = "%{F#D08770}%{F-} <label> "
-
 label = %percentage_used%%
 
 ;---------------------------------------
@@ -232,50 +214,22 @@ label = %percentage_used%%
 
 [module/network]
 type = internal/network
-; Name of the network interface to display. You can get the names of the
-; interfaces on your machine with `ip link`
-; Wireless interfaces often start with `wl` and ethernet interface with `eno` or `eth`
+
 interface = wlp0s20f3
 
-; Seconds to sleep between updates
-; Default: 1
-interval = 1.0
+interval = 1
 
-; Accumulate values from all interfaces
-; when querying for up/downspeed rate
-; Default: false
 accumulate-stats = true
 
-; Consider an `UNKNOWN` interface state as up.
-; Some devices like USB network adapters have 
-; an unknown state, even when they're running
-; Default: false
 unknown-as-up = true
 
-; Available tags:
-;   <label-connected> (default)
-;   <ramp-signal>
 format-connected = <label-connected>
 
-; Available tags:
-;   <label-disconnected> (default)
 format-disconnected = <label-disconnected>
 
-; All labels support the following tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %local_ip6% [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-
-; Default: %ifname% %local_ip%
 label-connected = " %signal%% "
 label-connected-foreground = ${colors.nord6}
 
-; Default: (none)
 label-disconnected = 
 label-disconnected-foreground = ${colors.nord3}
 
@@ -289,12 +243,6 @@ type = internal/xkeyboard
 format = <label-layout>
 format-spacing = 1
 
-; Available tokens:
-;   %layout%
-;   %name%
-;   %number%
-;   %icon%
-; Default: %layout%
 label-layout = %layout%
 label-layout-padding = 1
 label-layout-background = ${colors.nord3}
@@ -306,10 +254,14 @@ label-layout-foreground = ${colors.nord6}
 
 [module/bluetooth]
 type = custom/script
+
 exec = ~/.config/polybar/bluetooth.sh
+
 interval = 1
+
 click-left = exec ~/.config/polybar/bluetooth_toggle.sh
 click-right = exec blueberry
+
 format-padding = 1
 format-background = ${colors.nord1}
 format-foreground = ${colors.nord6}
