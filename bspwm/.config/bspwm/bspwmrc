@@ -29,5 +29,5 @@ bspc rule -a Screenkey manage=off
 light-locker --lock-on-suspend &
 sxhkd &
 dropbox &
-imwheel
+imwheel -k
 bluetoothctl power on
