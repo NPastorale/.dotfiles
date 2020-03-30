@@ -12,6 +12,7 @@ alias ll='ls -lah'
 alias l='ls -lh'
 alias vi='vim'
 alias ip='ip -c=auto'
+alias man='LESS='+Gg' man'
 
 # Safety net aliases
 alias rm='rm -I --preserve-root'
