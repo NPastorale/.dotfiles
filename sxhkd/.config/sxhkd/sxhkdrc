@@ -6,6 +6,10 @@
 super + Return
 	termite
 
+# power menu
+super + shift + p
+	~/.config/sxhkd/power.sh
+
 # menu
 super + shift + alt + space
 	rofi -show drun
