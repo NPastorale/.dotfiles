@@ -23,4 +23,4 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-PS1='\u@\h \W\$ '
+PS1='\e[01;36m\u@\h\e[m \e[0;32m\W$ \e[m'
