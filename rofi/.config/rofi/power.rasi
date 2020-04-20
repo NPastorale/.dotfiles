@@ -1,22 +1,23 @@
 @import "nord"
 
 * {
-    font: "SF Pro Display Thin 50";
+    font: "SF Pro Display Light 15";
 }
 
 #window {
-    width: 718;
-    padding: 3;
+    padding: 919;
+    width: 100%;
+    transparency: "real";
+    background-color: #3B425299;
 }
 
 #inputbar {
     enabled: false;
-    }
+}
 
 #listview {
-    layout: horizontal;
-    padding: 0 0 0 0;
-    }
+    padding: 0;
+}
 
 #mainbox {
     border: 0;
@@ -29,6 +30,5 @@
 
 #element {
     border: 0;
-    padding: 10;
     expand: true;
 }
