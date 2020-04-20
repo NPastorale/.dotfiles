@@ -55,7 +55,7 @@ font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
 
 modules-left = xkeyboard bspwm
 modules-center = xwindow
-modules-right = cpu memory alsa battery network bluetooth date
+modules-right = cpu memory pulseaudio battery network bluetooth date
 
 ;---------------------------------------
 ;	      BSPWM MODULE
@@ -172,10 +172,8 @@ ramp-capacity-4 = " %{F#a3be8c}"
 ;	   AUDIO MODULE
 ;---------------------------------------
 
-[module/alsa]
-type = internal/alsa
-
-master-soundcard = default
+[module/pulseaudio]
+type = internal/pulseaudio
 
 format-volume = "%{F#ebcb8b}%{F-} <label-volume> "
 label-volume = %percentage%%
