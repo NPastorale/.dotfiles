@@ -71,6 +71,15 @@ fi
 stow --no-folding -v -d "$scriptDir" imwheel
 errorCodes+=$?
 
+# If picom config file exists, delete it and stow the custom one
+if [[ -f ~/.config/picom/picom.conf ]] && ! [[ -L ~/.config/picom/picom.conf ]]; then
+    echo "IMWheel config already exists. Removing..."
+    rm -rf ~/.config/picom/picom.conf
+fi
+
+stow --no-folding -v -d "$scriptDir" picom
+errorCodes+=$?
+
 # Check for errors
 if [[ "$errorCodes" -eq 0 ]]; then
     echo "Everything was executed correctly."
