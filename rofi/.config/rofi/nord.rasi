@@ -59,7 +59,7 @@
 }
 
 #mainbox {
-    border:  2;
+    border:  1;
     padding: 10;
 }
 
