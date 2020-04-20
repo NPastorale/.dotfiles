@@ -6,7 +6,7 @@ configuration {
 	modi:               "drun,run";
 	width:              500;
 	lines:              5;
-	font:               "Font Awesome 5 Brands 10, SF Pro Display 12";
+	font:               "Font Awesome 5 Brands 10, SF Pro Display Light 12";
 	show-match:         false;
 	separator-style:    "solid";
 	hide-scrollbar:     true;
