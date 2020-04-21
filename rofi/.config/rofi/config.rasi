@@ -3,7 +3,7 @@
 //----------------------
 
 configuration {
-	modi:               "drun,run";
+	modi:               "drun";
 	width:              500;
 	lines:              5;
 	font:               "Font Awesome 5 Brands 10, SF Pro Display Light 12";
@@ -11,5 +11,5 @@ configuration {
 	separator-style:    "solid";
 	hide-scrollbar:     true;
 	theme:              "nord";
-    display-drun:       ">>>";
+    display-drun:       "􀊫";
 	}
