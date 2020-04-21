@@ -40,7 +40,7 @@
     selected-normal-background:  @nord3;
     border-color:                @nord8;
     spacing:                     2;
-    separatorcolor:              @nord1;
+    separatorcolor:              @nord6;
     urgent-background:           @background;
     selected-urgent-background:  @nord2;
     alternate-urgent-foreground: @urgent-foreground;
