@@ -10,6 +10,10 @@ super + Return
 super + shift + p
 	~/.config/sxhkd/power.sh
 
+# run menu
+super + r
+	~/.config/sxhkd/run.sh
+
 # menu
 super + shift + alt + space
 	rofi -show drun
