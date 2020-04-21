@@ -2,12 +2,14 @@
 
 * {
     font: "SF Pro Display Light 15";
+    selected-normal-foreground: @nord7;
+    transparency: "real";
+    transparent: #00000000;
 }
 
 #window {
-    padding: 919;
+    padding: 47%;
     width: 100%;
-    transparency: "real";
     background-color: #3B425299;
 }
 
@@ -17,18 +19,40 @@
 
 #listview {
     padding: 0;
+    background-color: @transparent;
 }
 
 #mainbox {
     border: 0;
     padding: 0;
+    background-color: @transparent;
 }
 
 #message {
     enabled: false;
-    }
+}
+
+#textbox {
+    enabled: false;
+}
 
 #element {
     border: 0;
-    expand: true;
+    background-color: @transparent;
+}
+
+#element.normal.normal {
+    background-color: @transparent;
+}
+
+#element.normal.active {
+    background-color: @transparent;
+}
+
+#element.alternate.normal {
+    background-color: @transparent;
+}
+
+#element.selected.normal {
+    background-color: @transparent;
 }
