@@ -27,7 +27,9 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-export PS1='\e[01;36m\u@\h\e[m \e[0;32m\W$ \e[m'
+export PS1='\[\e[1;36m\]\u@\h\[\e[m\] \[\e[0;32m\]\W$ \[\e[m\]'
+
+export PATH=$PATH':~/.local/bin'
 
 # Huge history. Doesn't appear to slow things down, so why not?
 HISTSIZE=500000
