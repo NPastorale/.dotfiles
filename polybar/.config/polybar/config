@@ -26,16 +26,16 @@ nord15 = #B48EAD
 
 [bar/nord]
 width = 90%
-height = 18
+height = 20
 bottom = false
 
 offset-x = 5%
 offset-y = 10
 
-border-size = 1
+border-size = 0
 border-color = ${colors.nord3}
 
-background = ${colors.nord1}
+background = ${colors.nord0}
 foreground = ${colors.nord6}
 
 wm-restack = bspwm
@@ -48,6 +48,7 @@ font-0 = SF Pro Mono:style=Regular:size=10;2
 font-1 = Font Awesome 5 Free Regular:size=10;2
 font-2 = Font Awesome 5 Free Solid:size=10;2
 font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
+font-4 = SF Pro Mono:style=Heavy:size=4;1
 
 ;---------------------------------------
 ;	     MODULES LAYOUT
@@ -55,7 +56,7 @@ font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
 
 modules-left = xkeyboard bspwm
 modules-center = xwindow
-modules-right = cpu memory pulseaudio battery network bluetooth date
+modules-right = updates cpu memory pulseaudio battery network bluetooth date
 
 ;---------------------------------------
 ;	      BSPWM MODULE
@@ -68,32 +69,24 @@ format = <label-state>
 
 label-focused-occupied = 
 label-focused-occupied-foreground = ${colors.nord8}
-label-focused-occupied-background = ${colors.nord1}
 label-focused-occupied-padding = 1
 
 label-focused-urgent = 
 label-focused-urgent-foreground = ${colors.nord11}
-label-focused-urgent-background = ${colors.nord1}
 label-focused-urgent-padding = 1
 
 label-focused-empty = 
 label-focused-empty-foreground = ${colors.nord8}
-label-focused-empty-background = ${colors.nord1}
 label-focused-empty-padding = 1
 
 label-occupied = 
-label-occupied-foreground = ${colors.nord6}
-label-occupied-background = ${colors.nord1}
 label-occupied-padding = 1
 
 label-urgent = 
 label-urgent-foreground = ${colors.nord13}
-label-urgent-background = ${colors.nord1}
 label-urgent-padding = 1
 
 label-empty = 
-label-empty-foreground = ${colors.nord6}
-label-empty-background = ${colors.nord1}
 label-empty-padding = 1
 
 ;---------------------------------------
@@ -103,8 +96,6 @@ label-empty-padding = 1
 [module/xwindow]
 type = internal/xwindow
 
-format-foreground = ${colors.nord6}
-format-background = ${colors.nord1}
 format-padding = 1
 
 label = %{F#8fbcbb}%{F-} %title%
@@ -127,8 +118,6 @@ time-alt = %H:%M:%S
 
 label = "%{F#5e81ac}%{F-} %date%  %{F#b48ead}%{F-} %time%"
 
-format-foreground = ${colors.nord6}
-format-background = ${colors.nord1}
 format-padding = 1
 
 ;---------------------------------------
@@ -144,20 +133,13 @@ adapter = ADP0
 full-at = 99
 
 format-charging = <label-charging>
-format-charging-foreground = ${colors.nord6}
-format-charging-background = ${colors.nord1}
 
 format-full = <label-full>
-format-full-foreground = ${colors.nord6}
-format-full-background = ${colors.nord1}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = ${colors.nord6}
-format-discharging-background = ${colors.nord1}
 
 label-charging = " %{F#a3be8c}%{F-} %percentage%% "
 label-discharging ="%percentage%% "
-label-discharging-foreground = ${colors.nord6}
 label-full = " %{F#a3be8c}%{F-} %percentage%% "
 
 ramp-capacity-0 = " %{F#bf616a}"
@@ -175,10 +157,43 @@ ramp-capacity-4 = " %{F#a3be8c}"
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = "%{F#ebcb8b}%{F-} <label-volume> "
+format-volume = "%{F#ebcb8b} %{F-} <bar-volume> "
 label-volume = %percentage%%
 
-label-muted = "%{F#eb8b8b}%{F-} %percentage%% "
+label-muted = "%{F#eb8b8b} %{F-} %{T5}%{F#eb8b8b}───────────────────%{F-}%{T-} "
+
+bar-volume-width = 20
+bar-volume-foreground-0 = ${colors.nord14}
+bar-volume-foreground-1 = ${colors.nord14}
+bar-volume-foreground-2 = ${colors.nord14}
+bar-volume-foreground-3 = ${colors.nord14}
+bar-volume-foreground-4 = ${colors.nord14}
+bar-volume-foreground-5 = ${colors.nord14}
+bar-volume-foreground-6 = ${colors.nord14}
+bar-volume-foreground-8 = ${colors.nord14}
+bar-volume-foreground-7 = ${colors.nord14}
+bar-volume-foreground-9 = ${colors.nord14}
+bar-volume-foreground-10 = ${colors.nord13}
+bar-volume-foreground-11 = ${colors.nord13}
+bar-volume-foreground-12 = ${colors.nord13}
+bar-volume-foreground-13 = ${colors.nord13}
+bar-volume-foreground-14 = ${colors.nord13}
+bar-volume-foreground-15 = ${colors.nord11}
+bar-volume-foreground-16 = ${colors.nord11}
+bar-volume-foreground-17 = ${colors.nord11}
+bar-volume-foreground-18 = ${colors.nord11}
+bar-volume-foreground-19 = ${colors.nord11}
+bar-volume-gradient = true
+bar-volume-indicator = 
+bar-volume-indicator-font = 5
+bar-volume-fill = ─
+bar-volume-fill-font = 5
+bar-volume-empty = ─
+bar-volume-empty-font = 5
+
+bar-volume-empty-foreground = ${colors.nord6}
+
+click-right = pavucontrol &
 
 ;---------------------------------------
 ;	   CPU MODULE
@@ -243,7 +258,7 @@ format-spacing = 1
 
 label-layout = %layout%
 label-layout-padding = 1
-label-layout-background = ${colors.nord3}
+label-layout-background = ${colors.nord2}
 label-layout-foreground = ${colors.nord6}
 
 ;---------------------------------------
@@ -261,5 +276,12 @@ click-left = exec ~/.config/polybar/bluetooth_toggle.sh
 click-right = exec blueberry
 
 format-padding = 1
-format-background = ${colors.nord1}
-format-foreground = ${colors.nord6}
+
+;---------------------------------------
+;	   UPDATES MODULE
+;---------------------------------------
+
+[module/updates]
+type = custom/script
+exec = ~/.config/polybar/updates.sh
+interval = 60
