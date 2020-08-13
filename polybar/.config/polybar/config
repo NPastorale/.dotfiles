@@ -157,10 +157,11 @@ ramp-capacity-4 = " %{F#a3be8c}"
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = "%{F#ebcb8b} %{F-} <bar-volume> "
+;format-volume = "%{F#ebcb8b} %{F-} <bar-volume> "
+format-volume = " <bar-volume> "
 label-volume = %percentage%%
 
-label-muted = "%{F#eb8b8b} %{F-} %{T5}%{F#eb8b8b}───────────────────%{F-}%{T-} "
+label-muted = "%{T5}%{F#eb8b8b}───────────────────%{F-}%{T-} "
 
 bar-volume-width = 20
 bar-volume-foreground-0 = ${colors.nord14}
@@ -186,9 +187,9 @@ bar-volume-foreground-19 = ${colors.nord11}
 bar-volume-gradient = true
 bar-volume-indicator = 
 bar-volume-indicator-font = 5
-bar-volume-fill = ─
+bar-volume-fill = ━
 bar-volume-fill-font = 5
-bar-volume-empty = ─
+bar-volume-empty = ━
 bar-volume-empty-font = 5
 
 bar-volume-empty-foreground = ${colors.nord6}
