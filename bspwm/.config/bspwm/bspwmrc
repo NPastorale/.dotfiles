@@ -30,4 +30,4 @@ light-locker --lock-on-suspend &
 sxhkd &
 dropbox &
 imwheel -k
-bluetoothctl power on
+bluetoothctl power on && sleep 2 && bluetoothctl --timeout 5 connect 04:52:C7:5B:70:1D
