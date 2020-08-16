@@ -3,7 +3,7 @@
 picom -b
 feh --bg-fill /home/nahue/Pictures/alps4K.png
 xsetroot -cursor_name left_ptr
-polybar -r nord &
+killall polybar ; polybar -r nord &
 setxkbmap us
 xcape -t 250 -e 'Super_L=Super_L|Shift_R|Meta_L|space'
 
