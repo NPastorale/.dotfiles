@@ -142,13 +142,13 @@ label-charging = " %{F#a3be8c}%{F-} %percentage%% "
 label-discharging ="%percentage%% "
 label-full = " %{F#a3be8c}%{F-} %percentage%% "
 
-ramp-capacity-0 = " %{F#bf616a}"
+ramp-capacity-0 = " %{F#bf616a}%{F-}"
 ramp-capacity-0-foreground = ${colors.nord11}
-ramp-capacity-1 = " %{F#bf616a}"
+ramp-capacity-1 = " %{F#bf616a}%{F-}"
 ramp-capacity-1-foreground = ${colors.nord11}
-ramp-capacity-2 = " %{F#a3be8c}"
-ramp-capacity-3 = " %{F#a3be8c}"
-ramp-capacity-4 = " %{F#a3be8c}"
+ramp-capacity-2 = " %{F#a3be8c}%{F-}"
+ramp-capacity-3 = " %{F#a3be8c}%{F-}"
+ramp-capacity-4 = " %{F#a3be8c}%{F-}"
 
 ;---------------------------------------
 ;	   AUDIO MODULE
