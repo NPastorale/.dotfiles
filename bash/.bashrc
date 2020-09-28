@@ -27,6 +27,9 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
+# Termite ssh temporal solution
+alias ssh='TERM=xterm-256color ssh' # This should be the start of a solution curl -sSL https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo | tic -x -
+
 export PS1='\[\e[1;36m\]\u@\h\[\e[m\] \[\e[0;32m\]\W$ \[\e[m\]'
 
 export PATH=$PATH':~/.local/bin'
