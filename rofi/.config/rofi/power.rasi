@@ -10,7 +10,7 @@
 #window {
     padding: 47%;
     width: 100%;
-    background-color: #3B425299;
+    background-color: @transparent;
 }
 
 #inputbar {
