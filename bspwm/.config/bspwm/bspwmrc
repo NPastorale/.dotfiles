@@ -1,6 +1,6 @@
 #! /bin/sh
 
-picom -b
+picom -b --experimental-backends
 feh --bg-fill /home/nahue/Pictures/alps4K.png
 xsetroot -cursor_name left_ptr
 killall polybar ; polybar -r nord &
