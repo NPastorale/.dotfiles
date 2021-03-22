@@ -13,10 +13,6 @@ fi
 stow --no-folding -v -d "$scriptDir" bash
 errorCodes+=$?
 
-# Stow the fonts
-stow --no-folding -v -d "$scriptDir" fonts
-errorCodes+=$?
-
 # If bspwmrc file exists, delete it. Then stow the custom one
 if [[ -f ~/.config/bspwm/bspwmrc ]] && ! [[ -L ~/.config/bspwm/bspwmrc ]]; then
     echo "BSPWM config already exists. Removing..."
