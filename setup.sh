@@ -69,11 +69,20 @@ errorCodes+=$?
 
 # If picom config file exists, delete it and stow the custom one
 if [[ -f ~/.config/picom/picom.conf ]] && ! [[ -L ~/.config/picom/picom.conf ]]; then
-    echo "IMWheel config already exists. Removing..."
+    echo "picom config already exists. Removing..."
     rm -rf ~/.config/picom/picom.conf
 fi
 
 stow --no-folding -v -d "$scriptDir" picom
+errorCodes+=$?
+
+# If kitty config file exists, delete it and stow the custom one
+if [[ -f ~/.config/kitty/kitty.conf ]] && ! [[ -L ~/.config/kitty/kitty.conf ]]; then
+    echo "kitty config already exists. Removing..."
+    rm -rf ~/.config/kitty/kitty.conf
+fi
+
+stow --no-folding -v -d "$scriptDir" kitty
 errorCodes+=$?
 
 # Check for errors
