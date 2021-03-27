@@ -274,7 +274,7 @@ exec = ~/.config/polybar/bluetooth.sh
 interval = 1
 
 click-left = exec ~/.config/polybar/bluetooth_toggle.sh
-click-right = exec blueberry
+click-right = exec blueman-manager
 
 format-padding = 1
 
