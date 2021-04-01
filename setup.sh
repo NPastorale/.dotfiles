@@ -85,6 +85,15 @@ fi
 stow --no-folding -v -d "$scriptDir" kitty
 errorCodes+=$?
 
+# If paru config file exists, delete it and stow the custom one
+if [[ -f ~/.config/paru/paru.conf ]] && ! [[ -L ~/.config/paru/paru.conf ]]; then
+    echo "paru config already exists. Removing..."
+    rm -rf ~/.config/paru/paru.conf
+fi
+
+stow --no-folding -v -d "$scriptDir" paru
+errorCodes+=$?
+
 # Check for errors
 if [[ "$errorCodes" -eq 0 ]]; then
     echo "Everything was executed correctly."
