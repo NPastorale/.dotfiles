@@ -50,13 +50,13 @@ XF86MonBrightnessDown
 
 # Media control
 XF86AudioPlay
-	playerctl play-pause
+	playerctl --player=spotify,%any play-pause
 XF86AudioStop
-	playerctl stop
+	playerctl --player=spotify,%any stop
 XF86AudioPrev
-	playerctl previous
+	playerctl --player=spotify,%any previous
 XF86AudioNext
-	playerctl next
+	playerctl --player=spotify,%any next
 
 # Screenshots
 @Print
