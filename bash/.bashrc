@@ -64,3 +64,5 @@ export LESS_TERMCAP_ue=$'\e[0m'     # reset underline
 export LESS_TERMCAP_us=$'\e[4;34m'  # begin underline
 
 export XDG_CONFIG_HOME=$HOME/.config
+
+eval $(keychain --eval --quiet --noask --nogui id_ed25519)
