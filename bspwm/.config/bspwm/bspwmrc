@@ -1,6 +1,6 @@
 #! /bin/sh
 
-xrandr --output DP-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-0 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off
+xrandr --output DP-0 --primary --auto --output DP-1 --off --output HDMI-0 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off
 
 picom -b --experimental-backends
 feh --bg-fill /home/nahue/Pictures/alps4K.png
@@ -25,6 +25,8 @@ bspc rule -a Google-chrome desktop='^2'
 bspc rule -a Code desktop='^3'
 bspc rule -a Steam desktop='^4'
 bspc rule -a mplayer2 state=floating
+#Jedi Fallen Order Origin rule so the game would start automatically
+bspc rule -a steam_app_1182480 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
