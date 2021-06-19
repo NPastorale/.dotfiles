@@ -139,8 +139,9 @@ format-full = <label-full>
 format-discharging = <ramp-capacity> <label-discharging>
 
 label-charging = " %{F#a3be8c}%{F-} %percentage%% "
-label-discharging ="%percentage%% "
+label-discharging ="%percentage%% (%time%) "
 label-full = " %{F#a3be8c}%{F-} %percentage%% "
+time-format = %-H:%M
 
 ramp-capacity-0 = " %{F#bf616a}%{F-}"
 ramp-capacity-0-foreground = ${colors.nord11}
@@ -285,4 +286,4 @@ format-padding = 1
 [module/updates]
 type = custom/script
 exec = ~/.config/polybar/updates.sh
-interval = 600
+interval = 60
