@@ -6,6 +6,6 @@ w_instance=$3
 
 w_name="$(xprop -id $w_id WM_NAME)"
 
-if [["$w_class" == "Steam" ]] && [[ "$w_name" != "Steam" ]]; then
+if [[ "$w_class" == "Steam" ]] && [[ "$w_name" != "Steam" ]]; then
   printf "focus=off state=floating"
 fi
