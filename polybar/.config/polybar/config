@@ -49,6 +49,7 @@ font-1 = Font Awesome 5 Free Regular:size=10;2
 font-2 = Font Awesome 5 Free Solid:size=10;2
 font-3 = Font Awesome 5 Brands Regular:style=Regular:size=10;2
 font-4 = SF Mono:style=Heavy:size=4;1
+font-5 = SF Mono:style=Regular:size=10;2
 
 ;---------------------------------------
 ;	     MODULES LAYOUT
@@ -258,8 +259,8 @@ type = internal/xkeyboard
 format = <label-layout>
 format-spacing = 1
 
-label-layout = %layout%
-label-layout-padding = 1
+label-layout = "%{T5} %{T-}%{T6}%layout%%{T-}%{T5} %{T-}"
+label-layout-padding = 0
 label-layout-background = ${colors.nord2}
 label-layout-foreground = ${colors.nord6}
 
