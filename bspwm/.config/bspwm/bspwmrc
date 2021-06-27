@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 picom -b --experimental-backends
 feh --bg-fill /home/nahue/Pictures/alps4K.png
@@ -27,9 +27,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a steam_app_1182480 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc config external_rules_command ~/.dotfiles/bspwm/.config/bspwm/external_rules.sh
 
 light-locker --lock-on-suspend &
 sxhkd &
 dropbox &
 imwheel -k
-bluetoothctl power on && sleep 2 && bluetoothctl --timeout 5 connect 04:52:C7:5B:70:1D
+bluetoothctl power on && sleep 2 && bluetoothctl --timeout 5 connect 78:2B:64:13:DC:47
